@@ -7,7 +7,11 @@ import java.util.Random;
 public record Rue(
                   String nom      ) {
     public Rue(String nom) {
-        this.nom = nom;
+        if (nom.isEmpty()){
+            this.nom = String.valueOf(Math.random());
+        }else{
+            this.nom = nom;
+        }
     }
 
     public Lieu obtenirAutreExtremite(Lieu extremiteActuelle, Carte carte) {
