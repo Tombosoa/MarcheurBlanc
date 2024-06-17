@@ -22,7 +22,7 @@ public class Marcheur {
         this.destination = destination;
     }
 
-    public String marcher(Carte carte) {
+    public List marcher(Carte carte) {
         Random random = new Random();
         lieuVisite.add(positionActuelle);
         lieuxVisitesList.add(positionActuelle);
@@ -43,7 +43,7 @@ public class Marcheur {
             lieuxVisitesList.add(positionActuelle);
         }
         indication(lieuxVisitesList);
-        return positionActuelle.getNomDuLieu();
+        return lieuxVisitesList;
     }
 
     protected void indication(List<Lieu> lieu){
@@ -59,5 +59,4 @@ public class Marcheur {
         }
         System.out.println("Voici la trajectoire pour arriver à "+ destination.getNomDuLieu() + ": "+ phrase.toString());
     }
-
 }
