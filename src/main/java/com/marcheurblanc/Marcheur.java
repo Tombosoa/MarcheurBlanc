@@ -42,19 +42,22 @@ public class Marcheur {
             lieuVisite.add(positionActuelle);
             lieuxVisitesList.add(positionActuelle);
         }
+        indication(lieuxVisitesList);
+        return positionActuelle.getNomDuLieu();
+    }
 
+    protected void indication(List<Lieu> lieu){
         StringBuilder phrase = new StringBuilder();
-        for (int i = 0; i < lieuxVisitesList.size(); i++) {
+        for (int i = 0; i < lieu.size(); i++) {
             if (i == 0) {
-                phrase.append(lieuxVisitesList.get(i).getNomDuLieu()).append(" d'abord");
-            } else if (i == lieuxVisitesList.size() - 1) {
-                phrase.append(" et enfin ").append(lieuxVisitesList.get(i).getNomDuLieu());
+                phrase.append(lieu.get(i).getNomDuLieu()).append(" d'abord");
+            } else if (i == lieu.size() - 1) {
+                phrase.append(" et enfin ").append(lieu.get(i).getNomDuLieu());
             } else {
-                phrase.append(", après ").append(lieuxVisitesList.get(i).getNomDuLieu());
+                phrase.append(", après ").append(lieu.get(i).getNomDuLieu());
             }
         }
         System.out.println("Voici la trajectoire pour arriver à "+ destination.getNomDuLieu() + ": "+ phrase.toString());
-        return positionActuelle.getNomDuLieu();
     }
 
 }
