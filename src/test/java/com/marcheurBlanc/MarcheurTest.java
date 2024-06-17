@@ -4,7 +4,6 @@ import com.marcheurblanc.Carte;
 import com.marcheurblanc.Lieu;
 import com.marcheurblanc.Marcheur;
 import com.marcheurblanc.Rue;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -12,9 +11,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MarcheurBlanc {
+public class MarcheurTest {
     @Test
-    public void marcheur_arrive_toujours(){
+    public void marcheur_arrive_toujours_a_destination(){
         Rue rue1 = new Rue("heisekl");
         Rue rue2 = new Rue("heipull");
         Rue rue3 = new Rue("ballpull");
@@ -32,8 +31,8 @@ public class MarcheurBlanc {
 
         Carte carte = new Carte(List.of(hei,Pullman,Balancoire, Boulevard, esti, sekl, marais));
 
-        Marcheur marc = new Marcheur("Marc", hei, esti);
+        Marcheur Bjarni = new Marcheur("Bjarni", hei, esti);
 
-        assertEquals(esti.getNomDuLieu(), marc.marcher(carte));
+        assertEquals(esti.getNomDuLieu(), Bjarni.marcher(carte));
     }
 }
