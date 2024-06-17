@@ -33,6 +33,6 @@ public class MarcheurTest {
 
         Marcheur Bjarni = new Marcheur("Bjarni", hei, esti);
 
-        assertEquals(esti.getNomDuLieu(), Bjarni.marcher(carte));
+        assertEquals(esti, Bjarni.marcher(carte).getLast());
     }
 }
