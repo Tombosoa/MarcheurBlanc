@@ -22,7 +22,7 @@ public class Marcheur {
         this.destination = destination;
     }
 
-    public List marcher(Carte carte) {
+    public List<Lieu> marcher(Carte carte) {
         Random random = new Random();
         lieuVisite.add(positionActuelle);
         lieuxVisitesList.add(positionActuelle);
